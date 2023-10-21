@@ -1,4 +1,4 @@
-﻿using CamundaVariables.Library.Variables;
+﻿using CamundaVariables.Library.VariableModels;
 using System;
 using System.Collections.Generic;
 using System.Net.Mime;

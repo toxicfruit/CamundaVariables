@@ -1,7 +1,7 @@
 ﻿using CamundaVariables.Console;
 using CamundaVariables.Library.Client;
 using CamundaVariables.Library.Models;
-using CamundaVariables.Library.Variables;
+using CamundaVariables.Library.VariableModels;
 using RandomTestValues;
 using System.Net.Http.Headers;
 using System.Runtime.Serialization;
@@ -25,21 +25,19 @@ var docObjectValue = ObjectToXDocument(objectValue);
 var request = new DeliverMessageRequest
 {
     MessageName = "StartWaitAndDie",
-    ProcessVariables = new Dictionary<string, VariableBase>
-    {
-        ["BoolVariable"] = new BooleanVariable(RandomValue.Bool()),
-        ["BytesVariable"] = new BytesVariable(RandomValue.Array<Byte>()),
-        ["DoubleVariable"] = new DoubleVariable(RandomValue.Double()),
-        ["IntegerVariable"] = new IntegerVariable(RandomValue.Int()),
-        ["JsonVariable"] = new JsonVariable(JsonSerializer.SerializeToNode(objectValue)),
-        ["LongVariable"] = new LongVariable(RandomValue.Long()),
-        ["NullVariable"] = new NullVariable(),
-        ["ObjectVariable"] = new ObjectVariable(objectValue),
-        ["ShortVariable"] = new ShortVariable(RandomValue.Short()),
-        ["StringVariable"] = new StringVariable(RandomValue.String()),
-        ["XmlVariable"] = new XmlVariable(docObjectValue),
-        ["ListVariable"] = new ObjectVariable(RandomValue.List<string>()),
-    }
+    ProcessVariables = new Variables()
+        .WithVariable("BoolVariable", new BooleanVariable(RandomValue.Bool()))
+        .WithVariable("BytesVariable", new BytesVariable(RandomValue.Array<Byte>()))
+        .WithVariable("DoubleVariable", new DoubleVariable(RandomValue.Double()))
+        .WithVariable("IntegerVariable", new IntegerVariable(RandomValue.Int()))
+        .WithVariable("JsonVariable", new JsonVariable(JsonSerializer.SerializeToNode(objectValue)))
+        .WithVariable("LongVariable", new LongVariable(RandomValue.Long()))
+        .WithVariable("NullVariable", new NullVariable())
+        .WithVariable("ObjectVariable", new ObjectVariable(objectValue))
+        .WithVariable("ShortVariable", new ShortVariable(RandomValue.Short()))
+        .WithVariable("StringVariable", new StringVariable(RandomValue.String()))
+        .WithVariable("XmlVariable", new XmlVariable(docObjectValue))
+        .WithVariable("ListVariable", new ObjectVariable(RandomValue.List<string>()))
 };
 
 try

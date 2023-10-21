@@ -1,4 +1,4 @@
-﻿using CamundaVariables.Library.Variables;
+﻿using CamundaVariables.Library.VariableModels;
 using System;
 using System.Text.Json;
 using System.Text.Json.Nodes;
@@ -23,7 +23,7 @@ public class JsonVariableJsonConverter: JsonConverter<JsonVariable>
     public override void Write(Utf8JsonWriter writer, JsonVariable value, JsonSerializerOptions options)
     {
         writer.WriteStartObject();
-        writer.WriteString("value", value.Value.ToJsonString());
+        writer.WriteString("value", value.Value?.ToJsonString());
         writer.WriteEndObject();
     }
 }

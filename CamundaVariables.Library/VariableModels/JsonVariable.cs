@@ -2,9 +2,9 @@
 using System.Text.Json;
 using System.Text.Json.Nodes;
 
-namespace CamundaVariables.Library.Variables;
+namespace CamundaVariables.Library.VariableModels;
 
-public sealed record JsonVariable(JsonNode? Value): VariableBase
+public sealed record JsonVariable(JsonNode? Value) : VariableBase
 {
     public static JsonVariable Create<T>(T value, JsonSerializerOptions? options = null)
     {

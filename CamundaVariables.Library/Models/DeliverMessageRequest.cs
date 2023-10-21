@@ -1,5 +1,4 @@
-﻿using CamundaVariables.Library.Variables;
-using System.Collections.Generic;
+﻿using CamundaVariables.Library.VariableModels;
 
 namespace CamundaVariables.Library.Models;
 
@@ -10,7 +9,7 @@ public sealed class DeliverMessageRequest
     public string? TenantId { get; set; }
     public bool? WithoutTenantId { get; set; }
     public string? ProcessInstanceId {  get; set; }
-    public IDictionary<string, VariableBase>? CorrelationKeys { get; set; }
-    public IDictionary<string, VariableBase>? ProcessVariables { get; set; }
+    public Variables? CorrelationKeys { get; set; }
+    public Variables? ProcessVariables { get; set; }
     public bool All {  get; set; }
 }
