@@ -17,9 +17,9 @@ var httpClient = new HttpClient
 };
 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-var client = new CamundaClient(httpClient);
+var client = new Client(httpClient);
 
-var objectValue = RandomValue.Object<ComplexType>();
+var objectValue = RandomValue.Object<TestData>();
 var docObjectValue = ObjectToXDocument(objectValue);
 
 var request = new DeliverMessageRequest
@@ -53,7 +53,7 @@ catch (Exception ex)
     Console.WriteLine(ex.ToString());
 }
 
-static XDocument ObjectToXDocument(ComplexType objectValue)
+static XDocument ObjectToXDocument(TestData objectValue)
 {
     var doc = new XDocument();
     using (var writer = doc.CreateWriter())

@@ -1,6 +1,6 @@
 ﻿namespace CamundaVariables.Console;
 
-public class ComplexType
+public class TestData
 {
     public List<string> Tags { get; set; } = new List<string>();
     public bool HasIt {  get; set; }

@@ -11,12 +11,12 @@ using System.Threading.Tasks;
 
 namespace CamundaVariables.Library.Client;
 
-public class CamundaClient
+public class Client
 {
     private readonly HttpClient _httpClient;
     private readonly JsonSerializerOptions _jsonSerializerOptions;
 
-    public CamundaClient(HttpClient httpClient)
+    public Client(HttpClient httpClient)
     {
         _httpClient = httpClient;
         ValidateHttpClient(httpClient);
