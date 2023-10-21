@@ -44,6 +44,10 @@ try
 {
     await client.DeliverMessageAsync(request);
 }
+catch (ClientException ex)
+{
+    Console.WriteLine(ex.Message);
+}
 catch (Exception ex)
 {
     Console.WriteLine(ex.ToString());
