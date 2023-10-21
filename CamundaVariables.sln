@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CamundaVariables.Console", "CamundaVariables.Console\CamundaVariables.Console.csproj", "{9DFCEAE9-8E8D-4F2C-B75D-1E8BFA8E0602}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CamundaVariables.Library", "CamundaVariables.Library\CamundaVariables.Library.csproj", "{3651059A-9025-4A89-8AF4-7F76FB052251}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bpmn", "bpmn", "{132C0B7D-D885-494E-AC7F-7DC3E26B1352}"
+	ProjectSection(SolutionItems) = preProject
+		StartWaitAndDie.bpmn = StartWaitAndDie.bpmn
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9DFCEAE9-8E8D-4F2C-B75D-1E8BFA8E0602}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DFCEAE9-8E8D-4F2C-B75D-1E8BFA8E0602}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DFCEAE9-8E8D-4F2C-B75D-1E8BFA8E0602}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DFCEAE9-8E8D-4F2C-B75D-1E8BFA8E0602}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3651059A-9025-4A89-8AF4-7F76FB052251}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3651059A-9025-4A89-8AF4-7F76FB052251}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3651059A-9025-4A89-8AF4-7F76FB052251}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3651059A-9025-4A89-8AF4-7F76FB052251}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EC81DCF8-F59B-414B-B993-41BA490CBFB2}
+	EndGlobalSection
+EndGlobal
