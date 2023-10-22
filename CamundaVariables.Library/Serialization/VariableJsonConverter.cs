@@ -59,11 +59,6 @@ public class VariableJsonConverter: JsonConverter<VariableBase>
             _ => throw new ArgumentOutOfRangeException(nameof(value), value, null)
         };
 
-        //if (value is ObjectVariable)
-        //{
-        //    jsonNode["valueInfo"] = JsonSerializer.SerializeToNode(_valueInfo, _valueInfo.GetType(), options);
-        //}
-
         jsonNode.WriteTo(writer, options);
     }
 }
