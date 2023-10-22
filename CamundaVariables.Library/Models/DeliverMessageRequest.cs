@@ -2,7 +2,7 @@
 
 namespace CamundaVariables.Library.Models;
 
-public sealed class DeliverMessageRequest
+public class DeliverMessageRequest
 {
     public string MessageName { get; set; } = string.Empty;
     public string? BusinessKey { get; set; }
