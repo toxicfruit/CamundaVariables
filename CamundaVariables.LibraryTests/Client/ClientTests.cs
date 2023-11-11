@@ -16,7 +16,7 @@ namespace CamundaVariables.Library.Client.Tests;
 public class ClientTests
 {
     [TestMethod()]
-    [TestCategory("UnitTest")]
+    [TestCategory("Unit")]
     public async Task DeliverMessageAsync_HttpException_ThrowsException()
     {
         var expectedError = RandomValue.Object<ErrorResponse>();
@@ -41,7 +41,7 @@ public class ClientTests
     }
 
     [TestMethod()]
-    [TestCategory("UnitTest")]
+    [TestCategory("Unit")]
     public async Task DeliverMessageAsync_HttpClientReturnsSuccess_ReturnsSuccess()
     {
         var objectValue = RandomValue.Object<TestData>();
@@ -86,7 +86,7 @@ public class ClientTests
 
     [TestMethod()]
     [TestCategory("Integration")]
-    [Ignore]
+    //[Ignore]
     public async Task DeliverMessageAsyncTest()
     {
         var httpClient = new HttpClient

@@ -3,16 +3,12 @@ using CamundaVariables.Library.Serialization;
 using CamundaVariables.Library.VariableModels;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using RandomTestValues;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace CamundaVariables.LibraryTests.Client;
 
 [TestClass]
+[TestCategory("Unit")]
 public class Serialization
 {
     [TestMethod]

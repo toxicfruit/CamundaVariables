@@ -3,4 +3,13 @@
     <AllowParallelTestExecution>False</AllowParallelTestExecution>
     <SolutionConfigured>True</SolutionConfigured>
   </Settings>
+  <EngineModes>
+    <EngineMode>
+      <Name>Run all but Integration tests automatically</Name>
+      <Settings>
+        <TestFilter>DoesNotHaveCategory 'Integration'</TestFilter>
+        <TestsToExecuteAutomatically>DoesNotHaveCategory 'Integration'</TestsToExecuteAutomatically>
+      </Settings>
+    </EngineMode>
+  </EngineModes>
 </SolutionConfiguration>
