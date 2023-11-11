@@ -86,7 +86,7 @@ public class ClientTests
 
     [TestMethod()]
     [TestCategory("Integration")]
-    //[Ignore]
+    [Ignore]
     public async Task DeliverMessageAsyncTest()
     {
         var httpClient = new HttpClient
