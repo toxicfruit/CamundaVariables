@@ -31,6 +31,7 @@ public class Client
             options.Converters.Add(new VariableJsonConverter());
             options.Converters.Add(new JsonVariableJsonConverter());
             options.Converters.Add(new XmlVariableJsonConverter());
+            options.Converters.Add (new DateTimeVariableJsonConverter());
         });
     }
 

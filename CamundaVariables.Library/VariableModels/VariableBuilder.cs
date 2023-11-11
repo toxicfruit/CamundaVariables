@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Nodes;
+﻿using System;
+using System.Text.Json.Nodes;
 using System.Xml.Linq;
 
 namespace CamundaVariables.Library.VariableModels;
@@ -22,13 +23,14 @@ public class VariableBuilder
     {
         return WithVariable(name, value switch
         {
-            null => new NullVariable(),
             bool => new BooleanVariable((bool)value),
             byte[] => new BytesVariable((byte[])value),
+            DateTime => new DateTimeVariable((DateTime)value),
             double => new DoubleVariable((double)value),
             int => new IntegerVariable((int)value),
             JsonNode => new JsonVariable((JsonNode)value),
             long => new LongVariable((long)value),
+            null => new NullVariable(),
             short => new ShortVariable((short)value),
             string => new StringVariable((string)value),
             XDocument => new XmlVariable((XDocument)value),

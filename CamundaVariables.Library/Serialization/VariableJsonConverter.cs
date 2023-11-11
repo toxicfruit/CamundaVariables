@@ -1,7 +1,5 @@
 ﻿using CamundaVariables.Library.VariableModels;
 using System;
-using System.Collections.Generic;
-using System.Net.Mime;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -22,17 +20,18 @@ public class VariableJsonConverter: JsonConverter<VariableBase>
 
         return variableType switch
         {
-            "String" => rootElement.Deserialize<StringVariable>(options),
             "Boolean" => rootElement.Deserialize<BooleanVariable>(options),
-            "Short" => rootElement.Deserialize<ShortVariable>(options),
-            "Integer" => rootElement.Deserialize<IntegerVariable>(options),
-            "Long" => rootElement.Deserialize<LongVariable>(options),
-            "Double" => rootElement.Deserialize<DoubleVariable>(options),
             "Bytes" => rootElement.Deserialize<BytesVariable>(options),
-            "Null" => rootElement.Deserialize<NullVariable>(options),
+            "Date" => rootElement.Deserialize<DateTimeVariable>(options),
+            "Double" => rootElement.Deserialize<DoubleVariable>(options),
+            "Integer" => rootElement.Deserialize<IntegerVariable>(options),
             "Json" => rootElement.Deserialize<JsonVariable>(options),
-            "Xml" => rootElement.Deserialize<XmlVariable>(options),
+            "Long" => rootElement.Deserialize<LongVariable>(options),
+            "Null" => rootElement.Deserialize<NullVariable>(options),
             "Object" => rootElement.Deserialize<ObjectVariable>(options),
+            "Short" => rootElement.Deserialize<ShortVariable>(options),
+            "String" => rootElement.Deserialize<StringVariable>(options),
+            "Xml" => rootElement.Deserialize<XmlVariable>(options),
             _ => rootElement.Deserialize<UnknownVariable>(options)
         };
     }
@@ -44,18 +43,19 @@ public class VariableJsonConverter: JsonConverter<VariableBase>
 
         jsonNode["type"] = value switch
         {
-            StringVariable => "String",
             BooleanVariable => "Boolean",
-            ShortVariable => "Short",
-            IntegerVariable => "Integer",
-            LongVariable => "Long",
-            DoubleVariable => "Double",
             BytesVariable => "Bytes",
-            NullVariable => "Null",
+            DateTimeVariable => "Date",
+            DoubleVariable => "Double",
+            IntegerVariable => "Integer",
             JsonVariable => "Json",
-            XmlVariable => "Xml",
-            UnknownVariable unknownVariable => unknownVariable.Type,
+            LongVariable => "Long",
+            NullVariable => "Null",
             ObjectVariable => null,
+            ShortVariable => "Short",
+            StringVariable => "String",
+            UnknownVariable unknownVariable => unknownVariable.Type,
+            XmlVariable => "Xml",
             _ => throw new ArgumentOutOfRangeException(nameof(value), value, null)
         };
 
